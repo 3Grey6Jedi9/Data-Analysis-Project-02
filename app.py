@@ -3,7 +3,7 @@ from constants import TEAMS, PLAYERS
 
 def clean_data():
     for player in PLAYERS:
-
+        for 
 
 
 

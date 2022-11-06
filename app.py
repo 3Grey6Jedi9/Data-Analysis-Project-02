@@ -6,6 +6,18 @@ Teams = TEAMS
 
 Players = PLAYERS
 
+
+def menu():
+    print('''\t\t\tBASKETBALL TEAM STATS TOOL
+\r---- MENU ----
+Here are your choices:
+A) Display Team Stats
+B) Quit''')
+
+
+
+
+
 def clean_data(data):
     for player in data:
         for key, value in player.items():
@@ -41,7 +53,13 @@ def balance_teams(Teams, c_players):
 
 Final_Teams = balance_teams(Teams, c_players)
 
-#print(Final_Teams[0])
+#print(len(Final_Teams[0]))
+
+#MENU
+
+
+
+
 
 
 

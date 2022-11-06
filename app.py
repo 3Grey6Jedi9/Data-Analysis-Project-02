@@ -7,38 +7,6 @@ Teams = TEAMS
 Players = PLAYERS
 
 
-def menu(Teams):
-    print('''\t\t\tBASKETBALL TEAM STATS TOOL
-\r---- MENU ----
-Here are your choices:
-A) Display Team Stats
-B) Quit''')
-    try:
-        choice = input('Enter an option: ').upper()
-        if choice != 'A' and choice != 'B':
-            raise ValueError('please enter A or B')
-    except ValueError as err:
-        print(f'{err}')
-    else:
-        if choice == 'A':
-            print(f'''\n\t\t\tA) {Teams[0]}
-            \rB) {Teams[1]}
-            \rC) {Teams[2]''')
-            try:
-                choice = input('Enter a new option please: ').upper()
-                if choice != 'A' and choice != 'B' and choice != 'C':
-                    raise ValueError('please enter A, B, or C')
-            except ValueError as err:
-                print(f'{err}')
-
-            else:
-                
-
-
-
-
-
-
 
 
 def clean_data(data):
@@ -76,37 +44,38 @@ def balance_teams(Teams, c_players):
 
 Final_Teams = balance_teams(Teams, c_players)
 
-#print(len(Final_Teams[0]))
 
-#MENU
+def menu(Teams, Players):
+    c_players = clean_data(Players)
+    print('''\t\t\tBASKETBALL TEAM STATS TOOL
+\r---- MENU ----
+Here are your choices:
+A) Display Team Stats
+B) Quit''')
+    try:
+        choice = input('Enter an option: ').upper()
+        if choice != 'A' and choice != 'B':
+            raise ValueError('please enter A or B')
+    except ValueError as err:
+        print(f'{err}')
+    else:
+        if choice == 'A':
+            print(f'''\n\t\t\tA) {Teams[0]}
+            \rB) {Teams[1]}
+            \rC) {Teams[2]}''')
+            try:
+                choice = input('Enter a new option please: ').upper()
+                if choice != 'A' and choice != 'B' and choice != 'C':
+                    raise ValueError('please enter A, B, or C')
+            except ValueError as err:
+                print(f'{err}')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            else:
+                pass
 
 
 
 if __name__ == '__main__':
-    menu()
+    menu(Teams, Players)
 
 

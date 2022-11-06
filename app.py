@@ -14,11 +14,24 @@ Here are your choices:
 A) Display Team Stats
 B) Quit''')
     try:
-        choice = input(Enter an option:).upper()
-    except ValueError:
-        print('please enter A or B')
+        choice = input('Enter an option: ').upper()
+        if choice != 'A' and choice != 'B':
+            raise ValueError('please enter A or B')
+    except ValueError as err:
+        print(f'{err}')
     else:
-        
+        if choice == 'A':
+            print(f'''\n\t\t\tA) {Teams[0]}
+            \rB) {Teams[1]}
+            \rC) {Teams[2]''')
+            try:
+                choice = input('Enter a new option please: ').upper()
+                if choice != 'A' and choice != 'B' and choice != 'C':
+                    raise ValueError('please enter A, B, or C')
+            except ValueError as err:
+                print(f'{err}')
+
+                
 
 
 

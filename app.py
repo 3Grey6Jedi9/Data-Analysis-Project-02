@@ -7,12 +7,21 @@ Teams = TEAMS
 Players = PLAYERS
 
 
-def menu():
+def menu(Teams):
     print('''\t\t\tBASKETBALL TEAM STATS TOOL
 \r---- MENU ----
 Here are your choices:
 A) Display Team Stats
 B) Quit''')
+    try:
+        choice = input(Enter an option:).upper()
+    except ValueError:
+        print('please enter A or B')
+    else:
+        
+
+
+
 
 
 
@@ -84,5 +93,6 @@ Final_Teams = balance_teams(Teams, c_players)
 
 
 if __name__ == '__main__':
-    pass
+    menu()
+
 

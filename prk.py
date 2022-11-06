@@ -1,6 +1,9 @@
-a = 'YES'
 
-boolean = bool(a)
+i = 0
 
-print(type(boolean))
+while i < 3:
+    print('CONGUITOOOOO ATACK!!!')
+    i += 1
+
+
 

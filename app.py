@@ -24,12 +24,7 @@ def clean_data(data):
 c_players = clean_data(Players)
 
 
-
-
-print(c_players)
-
 n_players = len(Players) / len(Teams)
-
 
 
 def balance_teams(Teams, c_players):
@@ -37,16 +32,16 @@ def balance_teams(Teams, c_players):
     for team in Teams:
         team = []
         while len(team) < n_players:
-            n = random.Random(1, len(c_players) + 1)
+            n = random.randrange(0, len(c_players))
             team.append(c_players[n])
-            c_players.remove[n]
+            c_players.remove(c_players[n])
         Final_Teams.append(team)
     return Final_Teams
 
 
 Final_Teams = balance_teams(Teams, c_players)
 
-print(Final_Teams)
+#print(Final_Teams[0])
 
 
 

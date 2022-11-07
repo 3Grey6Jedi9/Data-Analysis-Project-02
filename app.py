@@ -28,7 +28,6 @@ def clean_data(data):
     return data
 
 
-c_players = clean_data(Players)
 
 
 n_players = len(Players) / len(Teams)
@@ -68,8 +67,8 @@ def average_height(Team):
                 heights.append(player[key])
             else:
                 continue
-    #average = statistics.mean(heights)
-    return heights
+    average = statistics.mean(heights)
+    return average
 
 
 

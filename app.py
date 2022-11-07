@@ -1,4 +1,4 @@
-import random
+import random, statistics
 
 from constants import TEAMS, PLAYERS
 
@@ -21,6 +21,10 @@ def clean_data(data):
                 else:
                     player[key] = []
                     player[key].append(value)
+        for key, value in player.items():
+            if key == 'height':
+                player[key] = int(((value.split(' ')[0])))
+
     return data
 
 
@@ -53,6 +57,20 @@ def experince(Team):
                     number_experts += 1
                 else:
                     continue
+    return number_experts
+
+
+def average_height(Team):
+    heights = []
+    for player in Team:
+        for key, value in player.items():
+            if key == 'height':
+                heights.append(player[key])
+            else:
+                continue
+    #average = statistics.mean(heights)
+    return heights
+
 
 
 
@@ -92,7 +110,9 @@ B) Quit''')
                     print(f'''\nTeam: {Teams[0]} Stats
                     \r---------------------------------
                     \rTotal players: {len(Final_Teams[0])}
-                    \rTotal experienced: ''')
+                    \rTotal experienced: {experince(Final_Teams[0])}
+                     \rTotal inexperienced: {(len(Final_Teams[0]))-(experince(Final_Teams[0]))}
+                     \rAverage height: {average_height(Final_Teams[0])} inches ''')
                 else:
                     print('so far so good')
 

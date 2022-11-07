@@ -43,7 +43,21 @@ def balance_teams(Teams, c_players):
 
 
 
-def 
+
+def experince(Team):
+    number_experts = 0
+    for players in Team:
+        for key, value in players.items():
+            if key == 'experience':
+                if players[key]:
+                    number_experts += 1
+                else:
+                    continue
+
+
+
+
+
 
 
 
@@ -79,6 +93,9 @@ B) Quit''')
                     \r---------------------------------
                     \rTotal players: {len(Final_Teams[0])}
                     \rTotal experienced: ''')
+                else:
+                    print('so far so good')
+
 
 
 

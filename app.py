@@ -105,34 +105,42 @@ B) Quit''')
                 print(f'{err}')
 
             else:
+                i = 0
                 if choice == 'A':
-                    print(f'''\nTeam: {Teams[0]} Stats
-                    \r---------------------------------
-                    \rTotal players: {len(Final_Teams[0])}
-                    \rTotal experienced: {experince(Final_Teams[0])}
-                     \rTotal inexperienced: {(len(Final_Teams[0]))-(experince(Final_Teams[0]))}
-                     \rAverage height: {average_height(Final_Teams[0])} inches''')
-                    print('\n Players on Team: \n\t\t')
-                    for player in Final_Teams[0]:
-                        for key, value in player.items():
-                            if key == 'name':
-                                print(f'{value}',end=', ')
-                    print('\n')
-                    print(' Guardians: \n\t\t')
-                    G = set()
-                    for player in Final_Teams[0]:
-                        for key, value in player.items():
-                            if key == 'guardians':
-                                G.update(set(value))
-                    for name in G:
-                        print(name, end=', ')
-                    print('\n')
+                    i = 0
+                elif choice == 'B':
+                    i = 1
+                elif choice == 'C':
+                    i = 2
+                else:
+                    pass
+
+                print(f'''\nTeam: {Teams[i]} Stats
+                \r---------------------------------
+                \rTotal players: {len(Final_Teams[i])}
+                \rTotal experienced: {experince(Final_Teams[i])}
+                \rTotal inexperienced: {(len(Final_Teams[i]))-(experince(Final_Teams[i]))}                     \rAverage height: {average_height(Final_Teams[0])} inches''')
+                print('\n Players on Team: \n\t\t')
+                for player in Final_Teams[i]:
+                    for key, value in player.items():
+                        if key == 'name':
+                            print(f'{value}',end=', ')
+                print('\n')
+                print(' Guardians: \n\t\t')
+                G = set()
+                for player in Final_Teams[i]:
+                    for key, value in player.items():
+                        if key == 'guardians':
+                            G.update(set(value))
+                for name in G:
+                    print(name, end=', ')
+                print('\n')
 
 
 
 
 
-#Solve guardians and finish the program
+
 
 
 

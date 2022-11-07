@@ -47,7 +47,7 @@ Final_Teams = balance_teams(Teams, c_players)
 
 def menu(Teams, Players):
     c_players = clean_data(Players)
-    print('''\t\t\tBASKETBALL TEAM STATS TOOL
+    print('''\n\t\t\tBASKETBALL TEAM STATS TOOL
 \r---- MENU ----
 Here are your choices:
 A) Display Team Stats

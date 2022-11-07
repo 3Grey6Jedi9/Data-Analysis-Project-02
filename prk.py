@@ -2,14 +2,17 @@
 
 
 
-d = ['Anna', 'Peter']
+            d = ['Anna', 'Peter']
 
 
-e = set(d)
+                    e = set(d)
 
-print(e)
 
-for name in e:
-    print(name, end=', ')
+                print(e)
+
+
+
+                for name in e:
+                        print(name, end=', ')
 
 

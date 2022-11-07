@@ -111,9 +111,23 @@ B) Quit''')
                     \rTotal players: {len(Final_Teams[0])}
                     \rTotal experienced: {experince(Final_Teams[0])}
                      \rTotal inexperienced: {(len(Final_Teams[0]))-(experince(Final_Teams[0]))}
-                     \rAverage height: {average_height(Final_Teams[0])} inches ''')
-                else:
-                    print('so far so good')
+                     \rAverage height: {average_height(Final_Teams[0])} inches''')
+                    print('\n Players on Team: \n\t\t')
+                    for player in Final_Teams[0]:
+                        for key, value in player.items():
+                            if key == 'name':
+                                print(f'{value}',end=', ')
+                    print('\n')
+                    print(' Guardians: \n\t\t')
+                    for player in Final_Teams[0]:
+                        for key, value in player.items():
+                            if key == 'guardians':
+                                print(f'{value}',end=', ')
+                    print('\n')
+
+
+
+
 
 
 

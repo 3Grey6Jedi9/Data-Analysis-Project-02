@@ -42,11 +42,14 @@ def balance_teams(Teams, c_players):
     return Final_Teams
 
 
-Final_Teams = balance_teams(Teams, c_players)
+
+def 
+
 
 
 def menu(Teams, Players):
     c_players = clean_data(Players)
+    Final_Teams = balance_teams(Teams, c_players)
     print('''\n\t\t\tBASKETBALL TEAM STATS TOOL
 \r---- MENU ----
 Here are your choices:
@@ -71,7 +74,11 @@ B) Quit''')
                 print(f'{err}')
 
             else:
-                pass
+                if choice == 'A':
+                    print(f'''\nTeam: {Teams[0]} Stats
+                    \r---------------------------------
+                    \rTotal players: {len(Final_Teams[0])}
+                    \rTotal experienced: ''')
 
 
 

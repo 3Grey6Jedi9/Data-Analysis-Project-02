@@ -124,7 +124,7 @@ B) Quit''')
                 for player in Final_Teams[i]:
                     for key, value in player.items():
                         if key == 'name':
-                            print(f'{value}',end=', ')
+                            print(f'{value},',end=' ')
                 print('\n')
                 print(' Guardians: \n\t\t')
                 G = set()
@@ -133,7 +133,7 @@ B) Quit''')
                         if key == 'guardians':
                             G.update(set(value))
                 for name in G:
-                    print(name, end=', ')
+                    print(f'{name},', end=' ')
                 print('\n')
 
 

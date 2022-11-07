@@ -17,7 +17,7 @@ def clean_data(data):
         for key, value in player.items():
             if key == 'guardians':
                 if 'and' in value:
-                    player[key] = value.split('and')
+                    player[key] = value.split(' and ')
                 else:
                     player[key] = []
                     player[key].append(value)
@@ -119,16 +119,20 @@ B) Quit''')
                                 print(f'{value}',end=', ')
                     print('\n')
                     print(' Guardians: \n\t\t')
+                    G = set()
                     for player in Final_Teams[0]:
                         for key, value in player.items():
                             if key == 'guardians':
-                                print(f'{value}',end=', ')
+                                G.update(set(value))
+                    for name in G:
+                        print(name, end=', ')
                     print('\n')
 
 
 
 
 
+#Solve guardians and finish the program
 
 
 

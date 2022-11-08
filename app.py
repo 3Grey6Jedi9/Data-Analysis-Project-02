@@ -169,7 +169,8 @@ B) Quit''')
 
 
 def sort_players(Team):
-    '''This fuction will sort the players of team by their height'''
+    '''This fuction will sort the players of team by their height
+    it receives as an input a list of dictionaries'''
     pass
 
 

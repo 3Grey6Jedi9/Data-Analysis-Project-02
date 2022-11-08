@@ -75,6 +75,7 @@ def balance_teams(Teams, Players):
 
 
 def experince(Team):
+    '''This function returns the number of experienced players'''
     number_experts = 0
     for players in Team:
         for key, value in players.items():

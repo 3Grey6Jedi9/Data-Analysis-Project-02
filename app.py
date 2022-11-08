@@ -171,7 +171,25 @@ B) Quit''')
 def sort_players(Team):
     '''This fuction will sort the players of team by their height
     it receives as an input a list of dictionaries'''
-    pass
+    H = []
+    Sorted_Team = []
+    for player in Team:
+        for key, value in player.items():
+            if key == 'height':
+                H.append(value)
+    HS = sorted(H)
+    i = 0
+    while len(Team) > 0:
+        for player in Team:
+            for key, value in player.items():
+                if key == 'height' and value >= H[i]:
+                    Sorted_Team.append(player)
+                    Team.remove(player)
+                    i += 1
+                else:
+                    continue
+    return Sorted_Team
+
 
 
 

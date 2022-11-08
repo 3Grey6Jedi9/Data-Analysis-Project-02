@@ -1,5 +1,7 @@
 import random, statistics
 
+import sys
+
 from constants import TEAMS, PLAYERS
 
 Teams = TEAMS
@@ -135,6 +137,11 @@ B) Quit''')
                 for name in G:
                     print(f'{name},', end=' ')
                 print('\n')
+        elif choice == 'B':
+            sys.exit()
+
+
+
 
 
 

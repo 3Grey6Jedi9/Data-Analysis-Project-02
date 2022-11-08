@@ -149,7 +149,8 @@ B) Quit''')
                     \r---------------------------------
                     \rTotal players: {len(Final_Teams[i])}
                     \rTotal experienced: {experince(Final_Teams[i])}
-                    \rTotal inexperienced: {(len(Final_Teams[i]))-(experince(Final_Teams[i]))}                     \rAverage height: {average_height(Final_Teams[0])} inches''')
+                    \rTotal inexperienced: {(len(Final_Teams[i]))-(experince(Final_Teams[i]))}                     
+                    \rAverage height: {average_height(Final_Teams[0])} inches''')
                     print('\n Players on Team: \n\t\t')
                     for player in Final_Teams[i]:
                         for key, value in player.items():
@@ -187,6 +188,7 @@ def sort_players(Team):
 
 if __name__ == '__main__':
     menu(Teams, Players)
+
 
 
 

@@ -1,5 +1,5 @@
 
-from app import clean_data
+from app import clean_data, experts
 
 from constants import PLAYERS
 
@@ -26,5 +26,8 @@ def experince(Team):
 
 s = experince(Team)
 
-print(s)
 
+
+e = experts(Team)
+
+print(e)

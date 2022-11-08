@@ -83,62 +83,65 @@ def average_height(Team):
 def menu(Teams, Players):
     c_players = clean_data(Players)
     Final_Teams = balance_teams(Teams, c_players)
-    print('''\n\t\t\tBASKETBALL TEAM STATS TOOL
+    again = ''
+    while again != 'q':
+        print('''\n\t\t\tBASKETBALL TEAM STATS TOOL
 \r---- MENU ----
 Here are your choices:
 A) Display Team Stats
 B) Quit''')
-    try:
-        choice = input('Enter an option: ').upper()
-        if choice != 'A' and choice != 'B':
-            raise ValueError('please enter A or B')
-    except ValueError as err:
-        print(f'{err}')
-    else:
-        if choice == 'A':
-            print(f'''\n\t\t\tA) {Teams[0]}
-            \rB) {Teams[1]}
-            \rC) {Teams[2]}''')
-            try:
-                choice = input('Enter a new option please: ').upper()
-                if choice != 'A' and choice != 'B' and choice != 'C':
-                    raise ValueError('please enter A, B, or C')
-            except ValueError as err:
-                print(f'{err}')
+        try:
+            choice = input('Enter an option: ').upper()
+            if choice != 'A' and choice != 'B':
+                raise ValueError('please enter A or B')
+        except ValueError as err:
+            print(f'{err}')
+        else:
+            if choice == 'A':
+                print(f'''\n\t\t\tA) {Teams[0]}
+                \rB) {Teams[1]}
+                \rC) {Teams[2]}''')
+                try:
+                    choice = input('Enter a new option please: ').upper()
+                    if choice != 'A' and choice != 'B' and choice != 'C':
+                        raise ValueError('please enter A, B, or C')
+                except ValueError as err:
+                    print(f'{err}')
 
-            else:
-                i = 0
-                if choice == 'A':
-                    i = 0
-                elif choice == 'B':
-                    i = 1
-                elif choice == 'C':
-                    i = 2
                 else:
-                    pass
+                    i = 0
+                    if choice == 'A':
+                        i = 0
+                    elif choice == 'B':
+                        i = 1
+                    elif choice == 'C':
+                        i = 2
+                    else:
+                        pass
 
-                print(f'''\nTeam: {Teams[i]} Stats
-                \r---------------------------------
-                \rTotal players: {len(Final_Teams[i])}
-                \rTotal experienced: {experince(Final_Teams[i])}
-                \rTotal inexperienced: {(len(Final_Teams[i]))-(experince(Final_Teams[i]))}                     \rAverage height: {average_height(Final_Teams[0])} inches''')
-                print('\n Players on Team: \n\t\t')
-                for player in Final_Teams[i]:
-                    for key, value in player.items():
-                        if key == 'name':
-                            print(f'{value},',end=' ')
-                print('\n')
-                print(' Guardians: \n\t\t')
-                G = set()
-                for player in Final_Teams[i]:
-                    for key, value in player.items():
-                        if key == 'guardians':
-                            G.update(set(value))
-                for name in G:
-                    print(f'{name},', end=' ')
-                print('\n')
-        elif choice == 'B':
-            sys.exit()
+                    print(f'''\nTeam: {Teams[i]} Stats
+                    \r---------------------------------
+                    \rTotal players: {len(Final_Teams[i])}
+                    \rTotal experienced: {experince(Final_Teams[i])}
+                    \rTotal inexperienced: {(len(Final_Teams[i]))-(experince(Final_Teams[i]))}                     \rAverage height: {average_height(Final_Teams[0])} inches''')
+                    print('\n Players on Team: \n\t\t')
+                    for player in Final_Teams[i]:
+                        for key, value in player.items():
+                            if key == 'name':
+                                print(f'{value},',end=' ')
+                    print('\n')
+                    print(' Guardians: \n\t\t')
+                    G = set()
+                    for player in Final_Teams[i]:
+                        for key, value in player.items():
+                            if key == 'guardians':
+                                G.update(set(value))
+                    for name in G:
+                        print(f'{name},', end=' ')
+                    print('\n')
+                    again = input('Press ENTER to continue... or enter "q" if you want to quit: ').lower()
+            elif choice == 'B':
+                sys.exit()
 
 
 

@@ -36,25 +36,31 @@ def clean_data(data):
 
 n_players = len(Players) / len(Teams)
 
-#and (experince(team) < (experince(c_players)/(len(Teams)))):
 
-
-# While loop to add first players with exp. and then another while loop to add the rest (random)
 
 def balance_teams(Teams, Players):
+    '''This function set up the Teams'''
     c_players =  clean_data(Players)
+    exppt = experience(c_players) / len(Teams)
     Final_Teams = []
     for team in Teams:
         team = []
-        while (len(team) < n_players):
+        while experience(team) < exppt:
             n = random.randrange(0, len(c_players))
             for key, value in c_players[n].items():
                 if key == 'experience' and value == True:
                     team.append(c_players[n])
                     c_players.remove(c_players[n])
-                elif key == 'experience' and value == False:
+                else:
+                    continue
+        while (len(team) < n_players):
+            n = random.randrange(0, len(c_players))
+            for key, value in c_players[n].items():
+                if key == 'experience' and value == False:
                     team.append(c_players[n])
                     c_players.remove(c_players[n])
+                else:
+                    continue
 
         Final_Teams.append(team)
     return Final_Teams
@@ -62,7 +68,7 @@ def balance_teams(Teams, Players):
 
 
 
-def experince(Team):
+def experience(Team):
     '''This function returns the number of experienced players'''
     number_experts = 0
     for players in Team:
@@ -137,8 +143,8 @@ B) Quit''')
                     print(f'''\nTeam: {Teams[i]} Stats
                     \r---------------------------------
                     \rTotal players: {len(Final_Teams[i])}
-                    \rTotal experienced: {experince(Final_Teams[i])}
-                    \rTotal inexperienced: {(len(Final_Teams[i]))-(experince(Final_Teams[i]))}                     
+                    \rTotal experienced: {experience(Final_Teams[i])}
+                    \rTotal inexperienced: {(len(Final_Teams[i]))-(experience(Final_Teams[i]))}                     
                     \rAverage height: {average_height(Final_Teams[0])} inches''')
                     print('\n Players on Team: \n\t\t')
                     for player in Final_Teams[i]:

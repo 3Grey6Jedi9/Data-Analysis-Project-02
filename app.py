@@ -34,40 +34,28 @@ def clean_data(data):
 
 
 
-
-def experts(Team):
-    '''Defines the number of experts in a Team'''
-    experts = 0
-    for player in Team:
-        for key, value in player.items():
-            if key == 'experience' and value == True:
-                experts += 1
-            else:
-                continue
-    experts_team = experts / len(Teams)
-    return experts_team
-
-
-
 n_players = len(Players) / len(Teams)
 
+#and (experince(team) < (experince(c_players)/(len(Teams)))):
 
 
+# While loop to add first players with exp. and then another while loop to add the rest (random)
 
 def balance_teams(Teams, Players):
     c_players =  clean_data(Players)
     Final_Teams = []
     for team in Teams:
         team = []
-        while len(team) < n_players:
+        while (len(team) < n_players):
             n = random.randrange(0, len(c_players))
             for key, value in c_players[n].items():
-                if key == 'experience' and value == True and (experince(team) < experts(Players)):
+                if key == 'experience' and value == True:
                     team.append(c_players[n])
                     c_players.remove(c_players[n])
-                elif key == 'experience' and (experince(team) >= experts(Players)):
+                elif key == 'experience' and value == False:
                     team.append(c_players[n])
                     c_players.remove(c_players[n])
+
         Final_Teams.append(team)
     return Final_Teams
 

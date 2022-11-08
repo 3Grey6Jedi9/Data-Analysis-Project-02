@@ -103,6 +103,7 @@ def average_height(Team):
 
 
 def menu(Teams, Players):
+    '''This would be the main function'''
     Final_Teams = balance_teams(Teams, Players)
     again = ''
     while again != 'q':

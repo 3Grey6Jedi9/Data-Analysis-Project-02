@@ -1,18 +1,30 @@
 
+from app import clean_data
+
+from constants import PLAYERS
+
+
+CP = clean_data(PLAYERS)
+
+Team = CP
 
 
 
-            d = ['Anna', 'Peter']
 
 
-                    e = set(d)
+def experince(Team):
+    number_experts = 0
+    for players in Team:
+        for key, value in players.items():
+            if key == 'experience':
+                if players[key]:
+                    number_experts += 1
+                else:
+                    continue
+    return number_experts
 
 
-                print(e)
+s = experince(Team)
 
-
-
-                for name in e:
-                        print(name, end=', ')
-
+print(s)
 

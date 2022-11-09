@@ -108,7 +108,7 @@ def menu(Teams, Players):
     final_teams = []
     again = ''
     while again != 'q':
-        print('''\n\t\t\tBASKETBALL TEAM STATS TOOL
+        print('''\n\t\t\t\033[1;3mBASKETBALL TEAM STATS TOOL\033[0m
 \r---- MENU ----
 Here are your choices:
 A) Display Team Stats
@@ -121,12 +121,12 @@ B) Quit''')
             print(f'{err}')
         else:
             if choice == 'A':
-                print(f'''\n\t\t\tA) {Teams[0]}
+                print(f'''\nA) {Teams[0]}
                 \rB) {Teams[1]}
                 \rC) {Teams[2]}''')
                 while ValueError and again != 'q':
                     try:
-                        choice = input('Enter a new option please: ').upper()
+                        choice = input('\nEnter a new option please: ').upper()
                         if choice != 'A' and choice != 'B' and choice != 'C':
                             raise ValueError('please enter A, B, or C')
                     except ValueError as err:
@@ -145,11 +145,11 @@ B) Quit''')
 
                         print(f'''\nTeam: {Teams[i]} Stats
                         \r---------------------------------
-                        \rTotal players: {len(Final_Teams[i])}
-                        \rTotal experienced: {experience(Final_Teams[i])}
-                        \rTotal inexperienced: {(len(Final_Teams[i]))-(experience(Final_Teams[i]))}                     
-                        \rAverage height: {average_height(Final_Teams[i])} inches''')
-                        print('\n Players on Team: \n\t\t')
+                        \r\033[1;3mTotal players:\033[0m {len(Final_Teams[i])}
+                        \r\033[1;3mTotal experienced:\033[0m {experience(Final_Teams[i])}
+                        \r\033[1;3mTotal inexperienced:\033[0m {(len(Final_Teams[i]))-(experience(Final_Teams[i]))}                     
+                        \r\033[1;3mAverage height:\033[0m {average_height(Final_Teams[i])} inches''')
+                        print('\n \033[1;3mPlayers on Team:\033[0m \n\t\t')
                         PL = []
                         for player in sort_players(Final_Teams[i]):
                             for key, value in player.items():
@@ -157,7 +157,7 @@ B) Quit''')
                                     print(f' {value},',end=' ')
                                     PL.append(value)
                         print('\n')
-                        print(' Guardians: \n\t\t')
+                        print(' \033[1;3mGuardians:\033[0m \n\t\t')
                         G = set()
                         GU = []
                         for player in Final_Teams[i]:
@@ -168,7 +168,7 @@ B) Quit''')
                             print(f' {name},', end=' ')
                             GU.append(name)
                         print('\n')
-                        final_team = {'team name': Teams[i],
+                        final_team = {'team name': Teams[i].upper(),
                                       'players': PL,
                                       'guardians': GU,
                                       'num_of_experienced': experience(Final_Teams[i]),
@@ -179,7 +179,7 @@ B) Quit''')
                     break
             elif choice == 'B':
                 sys.exit()
-        again = input('Press ENTER to continue... or enter "q" if you want to quit: ').lower()
+        again = input('\nPress ENTER to continue... or enter "q" if you want to quit: ').lower()
 
 
 def sort_players(Team):

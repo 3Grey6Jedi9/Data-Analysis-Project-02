@@ -146,7 +146,7 @@ B) Quit''')
                     \rTotal players: {len(Final_Teams[i])}
                     \rTotal experienced: {experience(Final_Teams[i])}
                     \rTotal inexperienced: {(len(Final_Teams[i]))-(experience(Final_Teams[i]))}                     
-                    \rAverage height: {average_height(Final_Teams[0])} inches''')
+                    \rAverage height: {average_height(Final_Teams[i])} inches''')
                     print('\n Players on Team: \n\t\t')
                     for player in sort_players(Final_Teams[i]):
                         for key, value in player.items():

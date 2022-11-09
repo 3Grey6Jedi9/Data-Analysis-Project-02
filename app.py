@@ -175,6 +175,7 @@ B) Quit''')
                                       'num_of_unexperienced': (len(Final_Teams[i]))-(experience(Final_Teams[i])),
                                       'average_height': average_height(Final_Teams[i])}
                         final_teams.append(final_team)
+                        print(final_teams)
                     break
             elif choice == 'B':
                 sys.exit()

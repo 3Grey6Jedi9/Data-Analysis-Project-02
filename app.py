@@ -105,6 +105,7 @@ def average_height(Team):
 def menu(Teams, Players):
     '''This would be the main function'''
     Final_Teams = balance_teams(Teams, Players)
+    final_teams = []
     again = ''
     while again != 'q':
         print('''\n\t\t\tBASKETBALL TEAM STATS TOOL
@@ -149,24 +150,35 @@ B) Quit''')
                         \rTotal inexperienced: {(len(Final_Teams[i]))-(experience(Final_Teams[i]))}                     
                         \rAverage height: {average_height(Final_Teams[i])} inches''')
                         print('\n Players on Team: \n\t\t')
+                        PL = []
                         for player in sort_players(Final_Teams[i]):
                             for key, value in player.items():
                                 if key == 'name':
                                     print(f' {value},',end=' ')
+                                    PL.append(value)
                         print('\n')
                         print(' Guardians: \n\t\t')
                         G = set()
+                        GU = []
                         for player in Final_Teams[i]:
                             for key, value in player.items():
                                 if key == 'guardians':
                                     G.update(set(value))
                         for name in G:
                             print(f' {name},', end=' ')
+                            GU.append(name)
                         print('\n')
-                        again = input('Press ENTER to continue... or enter "q" if you want to quit: ').lower()
+                        final_team = {'team name': Teams[i],
+                                      'players': PL,
+                                      'guardians': GU,
+                                      'num_of_experienced': experience(Final_Teams[i]),
+                                      'num_of_unexperienced': (len(Final_Teams[i]))-(experience(Final_Teams[i])),
+                                      'average_height': average_height(Final_Teams[i])}
+                        final_teams.append(final_team)
+                    break
             elif choice == 'B':
                 sys.exit()
-
+        again = input('Press ENTER to continue... or enter "q" if you want to quit: ').lower()
 
 
 def sort_players(Team):

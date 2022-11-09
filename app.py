@@ -151,7 +151,7 @@ B) Quit''')
                     for player in sort_players(Final_Teams[i]):
                         for key, value in player.items():
                             if key == 'name':
-                                print(f'{value},',end=' ')
+                                print(f' {value},',end=' ')
                     print('\n')
                     print(' Guardians: \n\t\t')
                     G = set()
@@ -173,18 +173,19 @@ def sort_players(Team):
     it receives as an input a list of dictionaries'''
     H = []
     Sorted_Team = []
-    for player in Team:
+    Team_copy = Team.copy()
+    for player in Team_copy:
         for key, value in player.items():
             if key == 'height':
                 H.append(value)
     H.sort(reverse = True)
     i = 0
-    while len(Team) > 0:
-        for player in Team:
+    while len(Team_copy) > 0:
+        for player in Team_copy:
             for key, value in player.items():
                 if (key == 'height') and (value >= H[i]):
                     Sorted_Team.append(player)
-                    Team.remove(player)
+                    Team_copy.remove(player)
                     i += 1
                     break
                 else:

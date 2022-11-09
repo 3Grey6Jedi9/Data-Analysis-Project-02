@@ -177,7 +177,7 @@ def sort_players(Team):
         for key, value in player.items():
             if key == 'height':
                 H.append(value)
-    HS = sorted(H)
+    H.sort(reverse = True)
     i = 0
     while len(Team) > 0:
         for player in Team:
